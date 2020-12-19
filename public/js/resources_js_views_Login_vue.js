@@ -2017,6 +2017,57 @@ var UserController = /*#__PURE__*/function () {
 
       return login;
     }()
+  }, {
+    key: "register",
+    value: function () {
+      var _register = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(name, email, password, password_confirmation) {
+        var response, message;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default().post('/api/user/register', {
+                  name: name,
+                  email: email,
+                  password: password,
+                  password_confirmation: password_confirmation
+                });
+
+              case 2:
+                response = _context2.sent;
+                message = response.data.message;
+
+                if (!(message === '')) {
+                  _context2.next = 8;
+                  break;
+                }
+
+                _context2.next = 7;
+                return _route__WEBPACK_IMPORTED_MODULE_1__.default.push({
+                  name: "Login"
+                });
+
+              case 7:
+                return _context2.abrupt("return", "Dodano Użytkownika");
+
+              case 8:
+                return _context2.abrupt("return", Object.entries(message)[0][1][0]);
+
+              case 9:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+
+      function register(_x3, _x4, _x5, _x6) {
+        return _register.apply(this, arguments);
+      }
+
+      return register;
+    }()
   }]);
 
   return UserController;

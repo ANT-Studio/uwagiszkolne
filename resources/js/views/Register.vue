@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import UserController from "../UserController";
+
 export default {
     name: "Login",
     data() {
@@ -28,8 +30,13 @@ export default {
         }
     },
     methods: {
-        handleRegister() {
-
+        async handleRegister() {
+            if (this.name === "" || this.email === "" || this.password === "" || this.passwordConfirmation === ""){
+                this.message = "Uzupełnij wszystkie pola!";
+                return
+            }
+            this.message = "Ładowanie..."
+            this.message = await UserController.register(this.name, this.email, this.password, this.passwordConfirmation);
         }
     }
 }
