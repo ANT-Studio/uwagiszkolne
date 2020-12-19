@@ -1,8 +1,10 @@
 <template>
     <div class="navbar">
-        <div class="navbar-logo">
-            <img src="../../static/img/logo.png" alt="Logo" />
-        </div>
+        <router-link to="/">
+            <div class="navbar-logo">
+                <img src="../../static/img/logo.png" alt="Logo" />
+            </div>
+        </router-link>
         <div class="navbar-separator" />
         <div class="navbar-links">
             <div v-for="link in links" class="navbar-link" :key="link.text">

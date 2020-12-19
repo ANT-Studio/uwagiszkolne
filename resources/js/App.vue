@@ -1,16 +1,15 @@
 <template>
-    <navbar></navbar>
-    <router-view></router-view>
-
+    <Navbar />
+    <div class="app">
+        <router-view />
+    </div>
 </template>
 
 <script>
 import Navbar from "./components/Navbar";
-export default {
-    components: { Navbar },
-    mounted() {
 
-    }
+export default {
+    components: { Navbar }
 };
 </script>
 
@@ -24,5 +23,20 @@ export default {
 
     body {
         font-family: 'Open Sans', sans-serif;
+
+        .app {
+            padding: 0 40px;
+
+            h1 {
+                font-size: 3rem;
+                font-weight: bold;
+                margin: 50px 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: #ff8c00;
+            }
+        }
     }
 </style>

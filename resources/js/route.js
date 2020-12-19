@@ -5,7 +5,8 @@ const routes= [
     { path: "/dodaj", name: "AddNote", component: import("./views/Home") },
     { path: "/rankingi", name: "Rankings", component: import("./views/Home") },
     { path: "/konto", name: "Account", component: import("./views/Home"), meta: { requiresAuth: true } },
-    { path: "/logowanie", name: "Login", component: import("./views/Home") },
+    { path: "/logowanie", name: "Login", component: import("./views/Login") },
+    { path: "/rejestracja", name: "Register", component: import("./views/Register") },
 ]
 
 const router = createRouter({
