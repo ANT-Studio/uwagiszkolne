@@ -21,7 +21,10 @@
         "bootstrap": "^4.5.3"
     },
     "dependencies": {
-        "vue-router": "^4.0.0-0",
-        "npm-watch": "^0.7.0"
+        "@fortawesome/fontawesome-svg-core": "^1.2.32",
+        "@fortawesome/free-solid-svg-icons": "^5.15.1",
+        "@fortawesome/vue-fontawesome": "^3.0.0-3",
+        "npm-watch": "^0.7.0",
+        "vue-router": "^4.0.0-0"
     }
 }
