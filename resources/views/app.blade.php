@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel 8 + Vue 3 + Vue Router 4</title>
+        <title>Uwagi Szkolne</title>
     </head>
     <body>
         <div id="app"></div>
