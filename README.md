@@ -1,12 +1,12 @@
-# Laravel-vue-3-starter
+# Laravel8-Vue3-Router4-start-page
 
-It's a pre-configured project using Laravel 8 and Vue 3
+It's a pre-configured project using Laravel 8 and Vue 3 and Vue Router 4
 
 to get it up and run just clone it and enhoy coding :
 
-     git clone https://github.com/boussadjra/laravel-vue-3-starter.git
+     git clone https://github.com/ANT-Studio/laravel8-vue3-router4-start-page.git
 
-     cd laravel-vue-3-starter
+     cd laravel8-vue3-router4-start-page
 
 
 
@@ -18,5 +18,4 @@ and front-end modules :
 
      npm install
 
-finally add your magic.     
-
+To edit Vue js go to: `resources/js`
