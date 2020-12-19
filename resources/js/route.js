@@ -1,12 +1,13 @@
-import {createRouter, createWebHistory} from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
+import Home from './views/Home';
 
 const routes= [
-    { path: "/", name: "Home", component: import("./views/Home") },
-    { path: "/dodaj", name: "AddNote", component: import("./views/Home") },
-    { path: "/rankingi", name: "Rankings", component: import("./views/Home") },
-    { path: "/konto", name: "Account", component: import("./views/Home"), meta: { requiresAuth: true } },
-    { path: "/logowanie", name: "Login", component: import("./views/Login") },
-    { path: "/rejestracja", name: "Register", component: import("./views/Register") },
+    { path: "/", name: "Home", component: Home },
+    { path: "/dodaj", name: "AddNote", component: () => import("./views/Home") },
+    { path: "/rankingi", name: "Rankings", component: () => import("./views/Home") },
+    { path: "/konto", name: "Account", component: () => import("./views/Home"), meta: { requiresAuth: true } },
+    { path: "/logowanie", name: "Login", component: () => import("./views/Login") },
+    { path: "/rejestracja", name: "Register", component: () => import("./views/Register") },
 ]
 
 const router = createRouter({

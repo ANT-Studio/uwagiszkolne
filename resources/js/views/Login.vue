@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import UserController from '../UserController'
+
 export default {
     name: "Login",
     data() {
@@ -24,8 +26,12 @@ export default {
         }
     },
     methods: {
-        handleLogin() {
-
+        async handleLogin() {
+            if(this.email === '' || this.password === '') this.message = "Uzupełnij wszystkie pola!";
+            else {
+                this.message = "Ładowanie...";
+                this.message = await UserController.login(this.email, this.password);
+            }
         }
     }
 }

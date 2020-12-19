@@ -5,6 +5,7 @@
             Masz już konto? <router-link :to="{ name: 'Login' }">Zaloguj się!</router-link>
         </div>
         <form @submit.prevent="handleRegister" class="register-inputs">
+            <input type="text" class="register-input" v-model="name" placeholder="Wpisz swój nick...">
             <input type="email" class="register-input" v-model="email" placeholder="Wpisz swój email...">
             <input type="password" class="register-input" v-model="password" placeholder="Wpisz swoje hasło...">
             <input type="password" class="register-input" v-model="passwordConfirmation" placeholder="Wpisz ponownie swoje hasło...">
@@ -19,6 +20,7 @@ export default {
     name: "Login",
     data() {
         return {
+            name: "",
             email: "",
             password: "",
             passwordConfirmation: "",

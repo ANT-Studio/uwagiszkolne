@@ -19,6 +19,7 @@ __webpack_require__.r(__webpack_exports__);
   name: "Login",
   data: function data() {
     return {
+      name: "",
       email: "",
       password: "",
       passwordConfirmation: "",
@@ -109,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var _Register_vue_vue_type_template_id_3563ad7c_scoped_true_bindings_email_data_password_data_passwordConfirmation_data_message_data_handleRegister_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={"email":"data","password":"data","passwordConfirmation":"data","message":"data","handleRegister":"options"} */ "./resources/js/views/Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={\"email\":\"data\",\"password\":\"data\",\"passwordConfirmation\":\"data\",\"message\":\"data\",\"handleRegister\":\"options\"}");
+/* harmony import */ var _Register_vue_vue_type_template_id_3563ad7c_scoped_true_bindings_name_data_email_data_password_data_passwordConfirmation_data_message_data_handleRegister_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={"name":"data","email":"data","password":"data","passwordConfirmation":"data","message":"data","handleRegister":"options"} */ "./resources/js/views/Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={\"name\":\"data\",\"email\":\"data\",\"password\":\"data\",\"passwordConfirmation\":\"data\",\"message\":\"data\",\"handleRegister\":\"options\"}");
 /* harmony import */ var _Register_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Register.vue?vue&type=script&lang=js */ "./resources/js/views/Register.vue?vue&type=script&lang=js");
 /* harmony import */ var _Register_vue_vue_type_style_index_0_id_3563ad7c_lang_scss_scoped_true__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Register.vue?vue&type=style&index=0&id=3563ad7c&lang=scss&scoped=true */ "./resources/js/views/Register.vue?vue&type=style&index=0&id=3563ad7c&lang=scss&scoped=true");
 
@@ -117,7 +118,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-_Register_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _Register_vue_vue_type_template_id_3563ad7c_scoped_true_bindings_email_data_password_data_passwordConfirmation_data_message_data_handleRegister_options___WEBPACK_IMPORTED_MODULE_0__.render
+_Register_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _Register_vue_vue_type_template_id_3563ad7c_scoped_true_bindings_name_data_email_data_password_data_passwordConfirmation_data_message_data_handleRegister_options___WEBPACK_IMPORTED_MODULE_0__.render
 _Register_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__scopeId = "data-v-3563ad7c"
 /* hot reload */
 if (false) {}
@@ -164,12 +165,12 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/views/Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={\"email\":\"data\",\"password\":\"data\",\"passwordConfirmation\":\"data\",\"message\":\"data\",\"handleRegister\":\"options\"}":
-/*!*********************************************************************************************************************************************************************************************************!*\
-  !*** ./resources/js/views/Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={"email":"data","password":"data","passwordConfirmation":"data","message":"data","handleRegister":"options"} ***!
-  \*********************************************************************************************************************************************************************************************************/
+/***/ "./resources/js/views/Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={\"name\":\"data\",\"email\":\"data\",\"password\":\"data\",\"passwordConfirmation\":\"data\",\"message\":\"data\",\"handleRegister\":\"options\"}":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./resources/js/views/Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={"name":"data","email":"data","password":"data","passwordConfirmation":"data","message":"data","handleRegister":"options"} ***!
+  \***********************************************************************************************************************************************************************************************************************/
 /*! namespace exports */
-/*! export render [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/views/Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={"email":"data","password":"data","passwordConfirmation":"data","message":"data","handleRegister":"options"} .render */
+/*! export render [provided] [no usage info] [missing usage info prevents renaming] -> ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/views/Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={"name":"data","email":"data","password":"data","passwordConfirmation":"data","message":"data","handleRegister":"options"} .render */
 /*! other exports [not provided] [no usage info] */
 /*! runtime requirements: __webpack_require__, __webpack_exports__, __webpack_require__.d, __webpack_require__.r, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -177,17 +178,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => /* reexport safe */ _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Register_vue_vue_type_template_id_3563ad7c_scoped_true_bindings_email_data_password_data_passwordConfirmation_data_message_data_handleRegister_options___WEBPACK_IMPORTED_MODULE_0__.render
+/* harmony export */   "render": () => /* reexport safe */ _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Register_vue_vue_type_template_id_3563ad7c_scoped_true_bindings_name_data_email_data_password_data_passwordConfirmation_data_message_data_handleRegister_options___WEBPACK_IMPORTED_MODULE_0__.render
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Register_vue_vue_type_template_id_3563ad7c_scoped_true_bindings_email_data_password_data_passwordConfirmation_data_message_data_handleRegister_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={"email":"data","password":"data","passwordConfirmation":"data","message":"data","handleRegister":"options"} */ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/views/Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={\"email\":\"data\",\"password\":\"data\",\"passwordConfirmation\":\"data\",\"message\":\"data\",\"handleRegister\":\"options\"}");
+/* harmony import */ var _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Register_vue_vue_type_template_id_3563ad7c_scoped_true_bindings_name_data_email_data_password_data_passwordConfirmation_data_message_data_handleRegister_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={"name":"data","email":"data","password":"data","passwordConfirmation":"data","message":"data","handleRegister":"options"} */ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/views/Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={\"name\":\"data\",\"email\":\"data\",\"password\":\"data\",\"passwordConfirmation\":\"data\",\"message\":\"data\",\"handleRegister\":\"options\"}");
 
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/views/Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={\"email\":\"data\",\"password\":\"data\",\"passwordConfirmation\":\"data\",\"message\":\"data\",\"handleRegister\":\"options\"}":
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/views/Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={"email":"data","password":"data","passwordConfirmation":"data","message":"data","handleRegister":"options"} ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/views/Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={\"name\":\"data\",\"email\":\"data\",\"password\":\"data\",\"passwordConfirmation\":\"data\",\"message\":\"data\",\"handleRegister\":\"options\"}":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/views/Register.vue?vue&type=template&id=3563ad7c&scoped=true&bindings={"name":"data","email":"data","password":"data","passwordConfirmation":"data","message":"data","handleRegister":"options"} ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! namespace exports */
 /*! export render [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
@@ -230,13 +231,21 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
       })
     ]),
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
-      onSubmit: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)((...args) => ($options.handleRegister(...args)), ["prevent"])),
+      onSubmit: _cache[5] || (_cache[5] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)((...args) => ($options.handleRegister(...args)), ["prevent"])),
       class: "register-inputs"
     }, [
       (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+        type: "text",
+        class: "register-input",
+        "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => ($data.name = $event)),
+        placeholder: "Wpisz swój nick..."
+      }, null, 512 /* NEED_PATCH */), [
+        [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.name]
+      ]),
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
         type: "email",
         class: "register-input",
-        "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => ($data.email = $event)),
+        "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => ($data.email = $event)),
         placeholder: "Wpisz swój email..."
       }, null, 512 /* NEED_PATCH */), [
         [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.email]
@@ -244,7 +253,7 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
       (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
         type: "password",
         class: "register-input",
-        "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => ($data.password = $event)),
+        "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => ($data.password = $event)),
         placeholder: "Wpisz swoje hasło..."
       }, null, 512 /* NEED_PATCH */), [
         [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.password]
@@ -252,7 +261,7 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
       (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
         type: "password",
         class: "register-input",
-        "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => ($data.passwordConfirmation = $event)),
+        "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => ($data.passwordConfirmation = $event)),
         placeholder: "Wpisz ponownie swoje hasło..."
       }, null, 512 /* NEED_PATCH */), [
         [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.passwordConfirmation]
