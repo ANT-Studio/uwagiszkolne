@@ -39635,8 +39635,9 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  margin: 0;\n  padding: 0;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  margin: 0;\n  padding: 0;\n}\nbody {\n  font-family: \"Open Sans\", sans-serif;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -39663,7 +39664,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".navbar[data-v-6dde423b] {\n  display: flex;\n  padding: 40px;\n  align-items: center;\n}\n.navbar .navbar-logo[data-v-6dde423b] {\n  width: 200px;\n}\n.navbar .navbar-logo img[data-v-6dde423b] {\n  width: 100%;\n}\n.navbar .navbar-separator[data-v-6dde423b] {\n  flex: 1;\n}\n.navbar .navbar-links[data-v-6dde423b] {\n  display: flex;\n}\n.navbar .navbar-links .navbar-link[data-v-6dde423b] {\n  padding-left: 50px;\n}\n.navbar .navbar-links .navbar-link a[data-v-6dde423b] {\n  color: black;\n  text-decoration: none;\n  font-size: 1.1rem;\n}\n.navbar .navbar-links .navbar-link span[data-v-6dde423b] {\n  margin-left: 20px;\n}\n.navbar .navbar-links .navbar-link-active[data-v-6dde423b] {\n  color: orange !important;\n  font-weight: bold;\n}\n@media only screen and (max-width: 970px) {\n.navbar[data-v-6dde423b] {\n    flex-direction: column;\n    text-align: center;\n}\n.navbar .navbar-links[data-v-6dde423b] {\n    flex-direction: column;\n    margin-top: 30px;\n}\n.navbar .navbar-links .navbar-link[data-v-6dde423b] {\n    margin-top: 15px;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".navbar[data-v-6dde423b] {\n  display: flex;\n  padding: 40px;\n  align-items: center;\n}\n.navbar .navbar-logo[data-v-6dde423b] {\n  width: 200px;\n}\n.navbar .navbar-logo img[data-v-6dde423b] {\n  width: 100%;\n}\n.navbar .navbar-separator[data-v-6dde423b] {\n  flex: 1;\n}\n.navbar .navbar-links[data-v-6dde423b] {\n  display: flex;\n}\n.navbar .navbar-links .navbar-link[data-v-6dde423b] {\n  padding-left: 50px;\n}\n.navbar .navbar-links .navbar-link a[data-v-6dde423b] {\n  color: black;\n  text-decoration: none;\n  font-size: 1.1rem;\n}\n.navbar .navbar-links .navbar-link span[data-v-6dde423b] {\n  margin-left: 20px;\n}\n.navbar .navbar-links .navbar-link-active[data-v-6dde423b] {\n  color: #ff8c00 !important;\n  font-weight: bold;\n}\n@media only screen and (max-width: 970px) {\n.navbar[data-v-6dde423b] {\n    flex-direction: column;\n    text-align: center;\n}\n.navbar .navbar-links[data-v-6dde423b] {\n    flex-direction: column;\n    margin-top: 30px;\n}\n.navbar .navbar-links .navbar-link[data-v-6dde423b] {\n    padding-left: 0 !important;\n    margin-top: 15px;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -40651,7 +40652,6 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
         ]))
       }), 128 /* KEYED_FRAGMENT */)),
       (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_font_awesome_icon, { icon: "user" }),
         ($data.logged)
           ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_router_link, {
               key: 0,
@@ -40659,6 +40659,7 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
               "active-class": "navbar-link-active"
             }, {
               default: _withId(() => [
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_font_awesome_icon, { icon: "user" }),
                 (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.username), 1 /* TEXT */)
               ]),
               _: 1
@@ -40669,6 +40670,7 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
               "active-class": "navbar-link-active"
             }, {
               default: _withId(() => [
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_font_awesome_icon, { icon: "user" }),
                 _hoisted_6
               ]),
               _: 1

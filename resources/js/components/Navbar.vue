@@ -12,9 +12,14 @@
                 </router-link>
             </div>
             <div class="navbar-link">
-                <font-awesome-icon icon="user" />
-                <router-link v-if="logged" :to="{ name: 'Account' }" active-class="navbar-link-active"><span>{{ username }}</span></router-link>
-                <router-link v-else :to="{ name: 'Login' }" active-class="navbar-link-active"><span>Zaloguj się</span></router-link>
+                <router-link v-if="logged" :to="{ name: 'Account' }" active-class="navbar-link-active">
+                    <font-awesome-icon icon="user" />
+                    <span>{{ username }}</span>
+                </router-link>
+                <router-link v-else :to="{ name: 'Login' }" active-class="navbar-link-active">
+                    <font-awesome-icon icon="user" />
+                    <span>Zaloguj się</span>
+                </router-link>
             </div>
         </div>
     </div>
@@ -59,7 +64,7 @@ export default {
         .navbar-link {
             padding-left: 50px;
 
-            a{
+            a {
                 color: black;
                 text-decoration: none;
                 font-size: 1.1rem;
@@ -68,28 +73,26 @@ export default {
             span {
                 margin-left: 20px;
             }
-
-
         }
 
-        .navbar-link-active{
-            color: orange!important;
+        .navbar-link-active {
+            color: #ff8c00 !important;
             font-weight: bold;
         }
-
     }
 }
 
 @media only screen and (max-width: 970px){
-    .navbar{
+    .navbar {
         flex-direction: column;
         text-align: center;
 
-        .navbar-links{
+        .navbar-links {
             flex-direction: column;
             margin-top: 30px;
 
-            .navbar-link{
+            .navbar-link {
+                padding-left: 0 !important;
                 margin-top: 15px;
             }
         }
