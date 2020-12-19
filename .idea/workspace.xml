@@ -175,8 +175,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="PHP Script.Backend" />
-      <item itemvalue="PHPUnit.phpunit.xml" />
       <item itemvalue="npm.Frontend" />
     </list>
   </component>
