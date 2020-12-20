@@ -13,4 +13,14 @@ export default class UserController {
         }
         return Object.entries(message)[0][1][0];
     }
+
+    static async register(name, email, password, password_confirmation) {
+        let response = await axios.post('/api/user/register', {name, email, password, password_confirmation});
+        let message = response.data.message;
+        if(message === ''){
+            await router.push({name: "Login"});
+            return "Dodano Użytkownika";
+        }
+        return Object.entries(message)[0][1][0];
+    }
 }

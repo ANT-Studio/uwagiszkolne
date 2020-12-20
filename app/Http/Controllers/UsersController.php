@@ -39,7 +39,7 @@ class UsersController extends Controller
     {
         try {
             $this->validate($request, [
-                'name' => 'required|min:3|max:20',
+                'name' => 'required|min:3|max:20|unique',
                 'email' => 'required|email|unique:users',
                 'password' => 'required|confirmed|min:8|max:20',
             ]);
