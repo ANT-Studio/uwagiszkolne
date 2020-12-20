@@ -79,4 +79,10 @@ export default {
             }
         }
     }
+
+    @media only screen and (max-width: 970px) {
+        .login {
+            width: 70vw !important;
+        }
+    }
 </style>

@@ -25,7 +25,7 @@ export default {
         font-family: 'Open Sans', sans-serif;
 
         .app {
-            padding: 0 40px;
+            padding: 0 50px;
 
             h1 {
                 font-size: 3rem;
@@ -37,6 +37,12 @@ export default {
                 text-decoration: none;
                 color: #ff8c00;
             }
+        }
+    }
+
+    @media only screen and (max-width: 970px) {
+        h1 {
+            font-size: 2.5rem !important;
         }
     }
 </style>

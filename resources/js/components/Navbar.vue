@@ -64,6 +64,7 @@ export default {
         display: flex;
 
         .navbar-link {
+            position: relative;
             padding-left: 50px;
 
             a {
@@ -78,8 +79,17 @@ export default {
         }
 
         .navbar-link-active {
-            color: #ff8c00 !important;
-            font-weight: bold;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 30px;
+                bottom: 0;
+                left: 50px;
+                right: 0;
+                height: 4px;
+                width: calc(100% - 50px);
+                background-color: #fdd500;
+            }
         }
     }
 }
@@ -95,7 +105,14 @@ export default {
 
             .navbar-link {
                 padding-left: 0 !important;
-                margin-top: 15px;
+                margin-top: 25px;
+            }
+
+            .navbar-link-active {
+                &:after {
+                    left: 20px;
+                    width: calc(100% - 40px);
+                }
             }
         }
     }
