@@ -9,6 +9,9 @@ export default class UserController {
             localStorage.setItem('logged', 'true');
             localStorage.setItem('username', response.data.user.name);
             await router.push('/');
+            await axios.post('api/user/check').then(req => {
+                console.log(req);
+            })
             return "Zalogowano";
         }
         return Object.entries(message)[0][1][0];

@@ -7,6 +7,9 @@
         </router-link>
         <div class="navbar-separator" />
         <div class="navbar-links">
+            <div class="navbar-link">
+                <span @click="logout()">Wyloguj</span>
+            </div>
             <div v-for="link in links" class="navbar-link" :key="link.text">
                 <router-link :to="link.to" active-class="navbar-link-active">
                     <font-awesome-icon :icon="link.icon" />
@@ -29,6 +32,8 @@
 
 <script>
 import { main } from '../navbarLinks';
+import axios from "axios";
+import router from "../route";
 
 export default {
     name: "Navbar",
@@ -37,6 +42,20 @@ export default {
             links: main,
             logged: localStorage.getItem('logged') === 'true',
             username: localStorage.getItem('username'),
+        }
+    },
+    async mounted() {
+
+    },
+    methods: {
+        logout(){
+            axios.post("/api/user/logout").then(req => {
+                if(req.data.message === "ok"){
+                    localStorage.setItem('logged', 'false');
+                    localStorage.setItem('username', '');
+                    router.push("/");
+                }
+            })
         }
     }
 }
