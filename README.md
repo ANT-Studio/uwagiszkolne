@@ -1,21 +1,77 @@
-# Laravel8-Vue3-Router4-start-page
+# Uwagi Szkolne
 
-It's a pre-configured project using Laravel 8 and Vue 3 and Vue Router 4
+Uwagi szkolne to stona internetowa poświęcona śmiesznym lub ciekawym uwagom szkolnym (jak sama nazwa wskazuje).
 
-to get it up and run just clone it and enhoy coding :
+Docelowo stonę będzie można znaleźć w domenie www.uwagiszkolne.pl.
 
-     git clone https://github.com/ANT-Studio/laravel8-vue3-router4-start-page.git
+Strona została wykonana za pomocą technologii Laravel 8 oraz Vue.js 3.
 
-     cd laravel8-vue3-router4-start-page
+# Wersja deweloperska
 
+## Projekt wymaga:
 
+- npm
+- composer
+- php >= 7.4
+- vue >= 3.0
+- xampp
 
-then install backend modules by running 
+## Instalacja
 
-     composer install
+Sklnouj repozytorium na komputer:
+```
+$ git clone https://github.com/ANT-Studio/uwagiszkolne.git
+$ cd uwagiszkolne
+```
 
-and front-end modules :
+Zainstaluj biblioteki front-endowe i back-endowe:
+```
+composer install
+npm install
+```
 
-     npm install
+## Uruchomienie
 
-To edit Vue js go to: `resources/js`
+Żeby uruchomić back-end na localhost otwórz terminal w folderze `uwagiszkolne` i wpisz:
+```
+php artisan serve
+```
+
+Żeby strona przeładowywała się odrazu po zmianie kodu (hot reload) otwórz kolejny termina w folderz `uwagiszkolne` i wpisz:
+```
+npm run watch
+```
+lub:
+```
+mix run watch
+```
+
+Należy również utworzyć serwer oraz bazę danych MySQL w xampp'ie (adres: `localhost/phpmyadmin`).
+Następnie należy ustawić dane serwera w pliku `.env.example` i zmienić nazwę tego pliku na `.env`
+
+Przy pierwszym uruchomieniu należy otworzyć okno terminala w folderze `uwagiszkolne` i wpisać:
+```
+php artisan migrate
+```
+Nie trzeba wykonywać tego polecenia jeśli nie zmienia się struktury bazy danych przy następnych uruchomieniach
+
+# Aktualny stan
+
+Aktualnie aplikacja jest w fazie produkcyjnym 
+
+## Aplikacja zawiera:
+
+- Logowanie
+- Rejestracja
+- Dodawanie uwag
+
+## Planowane funkcjonalności:
+
+- Wyświetlanie uwag
+- Rankingi
+- System like'ów
+- Usuwanie uwag przez moderatorów
+- Zabezpieczenia przed spamem
+- Komentarze
+- Profil użytkownika
+- Uwagi użytkownika w profilu
