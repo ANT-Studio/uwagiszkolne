@@ -13,11 +13,15 @@ class NotesController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return JsonResponse
      */
-    public function index()
+    public function index(): JsonResponse
     {
-        //
+        $notes = Notes::orderBy("created_at", "DESC")->get();
+        foreach ($notes as $note){
+            $note->name = $note->user->name;
+        }
+        return response()->json(['data' => $notes]);
     }
 
     /**

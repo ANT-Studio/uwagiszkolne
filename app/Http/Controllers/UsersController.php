@@ -59,8 +59,14 @@ class UsersController extends Controller
         return response()->json(['user' => $user, 'message' => '']);
     }
 
-    public function logout(){
+    public function logout(): JsonResponse
+    {
         Auth::logout();
         return response()->json(['message' => 'ok']);
+    }
+
+    public function check(): JsonResponse
+    {
+        return response()->json(['data' => Auth::check()]);
     }
 }

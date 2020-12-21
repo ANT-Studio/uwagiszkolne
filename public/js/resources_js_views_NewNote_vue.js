@@ -15,33 +15,65 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _UserController__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../UserController */ "./resources/js/UserController.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "NewNote",
   data: function data() {
     return {
-      logged: localStorage.getItem('logged') === 'true',
+      logged: false,
       text: "",
       error: ""
     };
   },
+  mounted: function mounted() {
+    var _this = this;
+
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return _UserController__WEBPACK_IMPORTED_MODULE_2__.default.check();
+
+            case 2:
+              _this.logged = _context.sent;
+
+            case 3:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
+  },
   methods: {
     handleAdd: function handleAdd() {
-      var _this = this;
+      var _this2 = this;
 
       if (this.text === "") {
         this.error = "Musisz wypełnić pole uwagi";
         return;
       }
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default().put('/api/note/add', {
+      axios__WEBPACK_IMPORTED_MODULE_1___default().put('/api/note/add', {
         content: this.text
       }).then(function (req) {
         if (req.data.message === "") {
-          _this.text = "";
-          _this.error = "Dodano twoją uwagę!";
+          _this2.text = "";
+          _this2.error = "Dodano twoją uwagę!";
         }
       })["catch"](function (e) {
         console.log(e);

@@ -12,15 +12,19 @@
 
 <script>
 import axios from "axios";
+import UserController from "../UserController";
 
 export default {
     name: "NewNote",
     data(){
         return{
-            logged: localStorage.getItem('logged') === 'true',
+            logged: false,
             text: "",
             error: ""
         }
+    },
+    async mounted() {
+        this.logged = await UserController.check();
     },
     methods: {
         handleAdd(){

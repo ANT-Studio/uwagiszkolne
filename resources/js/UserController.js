@@ -9,9 +9,6 @@ export default class UserController {
             localStorage.setItem('logged', 'true');
             localStorage.setItem('username', response.data.user.name);
             await router.push('/');
-            await axios.post('api/user/check').then(req => {
-                console.log(req);
-            })
             return "Zalogowano";
         }
         return Object.entries(message)[0][1][0];
@@ -25,5 +22,15 @@ export default class UserController {
             return "Dodano Użytkownika";
         }
         return Object.entries(message)[0][1][0];
+    }
+
+    static async check(){
+        let response = await axios.post("/api/user/check");
+        return response.data.data;
+    }
+
+    static async getUser(){
+        let response = await axios.get("/api/user");
+        return response.data;
     }
 }

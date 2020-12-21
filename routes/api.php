@@ -12,10 +12,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix("/user")->group(function() {
     Route::post('/login', [UsersController::class, 'login']);
     Route::post('/register', [UsersController::class, 'register']);
+    Route::post('/check', [UsersController::class, 'check']);
     Route::post('/logout', [UsersController::class, 'logout']);
 });
 
 Route::prefix('/note')->group(function (){
     Route::middleware('auth:sanctum')->put('/add', [NotesController::class, 'store']);
+    Route::get('/index', [NotesController::class, 'index']);
 });
 

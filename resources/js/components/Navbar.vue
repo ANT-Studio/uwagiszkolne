@@ -34,28 +34,38 @@
 import { main } from '../navbarLinks';
 import axios from "axios";
 import router from "../route";
+import UserController from "../UserController";
 
 export default {
     name: "Navbar",
     data() {
         return {
             links: main,
-            logged: localStorage.getItem('logged') === 'true',
+            logged: "",
             username: localStorage.getItem('username'),
         }
     },
     async mounted() {
 
+        await this.setData()
     },
     methods: {
         logout(){
-            axios.post("/api/user/logout").then(req => {
+            axios.post("/api/user/logout").then(async (req) => {
                 if(req.data.message === "ok"){
-                    localStorage.setItem('logged', 'false');
-                    localStorage.setItem('username', '');
-                    router.push("/");
+                    await this.setData();
+                    await router.push("/");
                 }
             })
+        },
+
+        async setData(){
+            this.logged = await UserController.check();
+            try{
+                this.username = (await UserController.getUser()).name;
+            }catch{
+                this.username = "";
+            }
         }
     }
 }
