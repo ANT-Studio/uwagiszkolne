@@ -66,10 +66,10 @@ Aktualnie aplikacja jest w fazie produkcyjnym
 - Logowanie
 - Rejestracja
 - Dodawanie uwag
+- Wyświetlanie uwag
 
 ## Planowane funkcjonalności:
 
-- Wyświetlanie uwag
 - Rankingi
 - System like'ów
 - Usuwanie uwag przez moderatorów
