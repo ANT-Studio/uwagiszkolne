@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LikesController;
 use App\Http\Controllers\NotesController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Http\Request;
@@ -19,5 +20,11 @@ Route::prefix("/user")->group(function() {
 Route::prefix('/note')->group(function () {
     Route::middleware('auth:sanctum')->put('/add', [NotesController::class, 'store']);
     Route::get('/index', [NotesController::class, 'index']);
+});
+
+Route::prefix('/likes')->group(function () {
+    Route::middleware('auth:sanctum')->put('/add', [LikesController::class, 'store']);
+    Route::get('/index', [LikesController::class, 'index']);
+    Route::delete('/destroy', [LikesController::class, 'destroy']);
 });
 

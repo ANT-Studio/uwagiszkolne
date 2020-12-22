@@ -2,21 +2,39 @@
     <div class="note">
         <div class="bar"/>
         <div class="content">
-            <div class="description">Dodany {{ writeDate(note.created_at) }} przez {{ note.name }}</div>
+            <div class="description">Dodany <b>{{ writeDate() }}</b> przez <b>{{ note.name }}</b></div>
             <div class="text">{{ note.content }}</div>
+            <div class="actions">
+                <div class="action" @click="handleLike">
+                    Lubię to! ({{ likes }})
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+import NotesController from '../NotesController'
+
 export default {
     name: "Note",
     props: ['note'],
-    methods: {
-        writeDate(input) {
-            let date = new Date(input);
-            return date.toLocaleDateString();
+    data() {
+        return {
+            likes: 0
         }
+    },
+    methods: {
+        writeDate() {
+            let date = new Date(this.note.created_at);
+            return date.toLocaleDateString();
+        },
+        async handleLike() {
+            await NotesController.addLike(this.note.id);
+        }
+    },
+    async mounted () {
+        this.likes = await NotesController.getLikes(this.note.id);
     }
 }
 </script>
@@ -24,10 +42,11 @@ export default {
 <style lang="scss" scoped>
     .note {
         display: flex;
+        margin-right: 30px;
 
         .bar {
-            background: gray;
-            width: 5px;
+            background: #F0F0F0;
+            width: 6px;
             padding: 10px 0;
             margin-right: 10px;
         }
@@ -37,6 +56,23 @@ export default {
 
             .description {
                 margin-bottom: 15px;
+                font-size: 0.9rem;
+            }
+
+            .text {
+                font-size: 1.3rem;
+                margin-bottom: 25px;
+            }
+
+            .actions {
+                display: flex;
+
+                .action {
+                    cursor: pointer;
+                    border-radius: 6px;
+                    background-color: #fdd500;
+                    padding: 7px 15px;
+                }
             }
         }
     }

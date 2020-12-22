@@ -2,7 +2,7 @@
     <div class="home">
         <h1>Najnowsze uwagi!</h1>
         <div class="notes">
-            <note v-for="note in notes" :key="note.content" :note="note"></note>
+            <note v-for="note in notes" :key="note.content" :note="note" />
         </div>
     </div>
 </template>
@@ -33,7 +33,6 @@ export default {
             flex-wrap: wrap;
 
             .note {
-                width: 50%;
                 margin-bottom: 20px;
             }
         }

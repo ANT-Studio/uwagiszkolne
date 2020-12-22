@@ -6,8 +6,6 @@ export default class UserController {
         let response = await axios.post('/api/user/login', { email, password });
         let message = response.data.message;
         if(message === '') {
-            localStorage.setItem('logged', 'true');
-            localStorage.setItem('username', response.data.user.name);
             await router.push('/');
             return "Zalogowano";
         }
