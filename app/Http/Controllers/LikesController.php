@@ -33,7 +33,11 @@ class LikesController extends Controller
         $like = new Likes();
         $like->user_id = $id;
         $like->note_id = $request->input('note_id');
-        $like->save();
+        try {
+            $like->saveOrFail();
+        } catch (\Throwable $e) {
+            return response()->json(['message' => $e]);
+        }
 
         return response()->json(['data' => $like, 'message' => '']);
     }

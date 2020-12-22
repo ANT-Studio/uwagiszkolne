@@ -41646,10 +41646,10 @@ var NotesController = /*#__PURE__*/function () {
 
               case 2:
                 response = _context.sent;
-                response.data.data.filter(function (like) {
+                console.log(response.data.data);
+                return _context.abrupt("return", response.data.data.filter(function (like) {
                   return like.note_id === noteId;
-                });
-                return _context.abrupt("return", response.data.data.length);
+                }).length);
 
               case 5:
               case "end":
@@ -41673,12 +41673,17 @@ var NotesController = /*#__PURE__*/function () {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.next = 2;
+                console.log(note_id);
+                _context2.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default().put('/api/likes/add', {
                   note_id: note_id
+                }).then(function (req) {
+                  console.log(req);
+                })["catch"](function (e) {
+                  console.log(e);
                 });
 
-              case 2:
+              case 3:
               case "end":
                 return _context2.stop();
             }
