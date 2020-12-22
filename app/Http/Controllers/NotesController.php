@@ -18,9 +18,7 @@ class NotesController extends Controller
     public function index(): JsonResponse
     {
         $notes = Notes::orderBy("created_at", "DESC")->get();
-        foreach ($notes as $note){
-            $note->name = $note->user->name;
-        }
+        foreach ($notes as $note) { $note->name = $note->user->name; }
         return response()->json(['data' => $notes]);
     }
 
@@ -37,7 +35,7 @@ class NotesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @return JsonResponse
      */
     public function store(Request $request): JsonResponse
@@ -76,7 +74,7 @@ class NotesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  int  $id
      * @return Response
      */

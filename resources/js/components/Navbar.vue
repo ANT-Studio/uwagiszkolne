@@ -7,9 +7,6 @@
         </router-link>
         <div class="navbar-separator" />
         <div class="navbar-links">
-            <div class="navbar-link">
-                <span @click="logout()">Wyloguj</span>
-            </div>
             <div v-for="link in links" class="navbar-link" :key="link.text">
                 <router-link :to="link.to" active-class="navbar-link-active">
                     <font-awesome-icon :icon="link.icon" />
@@ -17,9 +14,9 @@
                 </router-link>
             </div>
             <div class="navbar-link">
-                <router-link v-if="logged" :to="{ name: 'Account' }" active-class="navbar-link-active">
+                <router-link :to="{ name: 'Account' }" v-if="logged">
                     <font-awesome-icon icon="user" />
-                    <span>{{ username }}</span>
+                    <span @click="logout">Wyloguj się</span>
                 </router-link>
                 <router-link v-else :to="{ name: 'Login' }" active-class="navbar-link-active">
                     <font-awesome-icon icon="user" />
@@ -41,31 +38,27 @@ export default {
     data() {
         return {
             links: main,
-            logged: "",
-            username: localStorage.getItem('username'),
+            logged: ""
         }
     },
     async mounted() {
-
         await this.setData()
     },
     methods: {
-        logout(){
-            axios.post("/api/user/logout").then(async (req) => {
-                if(req.data.message === "ok"){
+        logout() {
+            axios.post("/api/user/logout").then(async req => {
+                if(req.data.message === "") {
                     await this.setData();
                     await router.push("/");
                 }
             })
         },
-
-        async setData(){
+        async setData() {
             this.logged = await UserController.check();
-            try{
-                this.username = (await UserController.getUser()).name;
-            }catch{
-                this.username = "";
-            }
+        },
+        async handlePush() {
+            console.log('a');
+            await router.push('/konto');
         }
     }
 }

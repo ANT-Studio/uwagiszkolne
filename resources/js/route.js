@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from './views/Home';
+import UserController from './UserController'
 
-const routes= [
+const routes = [
     { path: "/", name: "Home", component: Home },
     { path: "/dodaj", name: "AddNote", component: () => import("./views/NewNote") },
     { path: "/rankingi", name: "Rankings", component: () => import("./views/Home") },
@@ -15,9 +16,9 @@ const router = createRouter({
     routes
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
     const requiresAuth = to.matched.some(x => x.meta.requiresAuth)
-    if (requiresAuth && localStorage.getItem('logged') === "true") next('/logowanie');
+    if (requiresAuth && await UserController.check()) next('/logowanie');
     else next();
 })
 

@@ -6,7 +6,7 @@
         <span>{{ error }}</span>
     </form>
     <div class="info" v-else>
-        Wybacz, ale nie jesteś zalogowany, co oznacza że nie możesz dodawać nowych uwag. Zaloguj się <router-link :to="{name: 'Login'}">tutaj</router-link>.
+        Wybacz, ale nie jesteś zalogowany, co oznacza że nie możesz dodawać nowych uwag. Zaloguj się <router-link :to="{ name: 'Login' }">tutaj</router-link>.
     </div>
 </template>
 
@@ -16,8 +16,8 @@ import UserController from "../UserController";
 
 export default {
     name: "NewNote",
-    data(){
-        return{
+    data() {
+        return {
             logged: false,
             text: "",
             error: ""
@@ -27,19 +27,18 @@ export default {
         this.logged = await UserController.check();
     },
     methods: {
-        handleAdd(){
-            if(this.text === ""){
-                this.error = "Musisz wypełnić pole uwagi";
+        handleAdd() {
+            if(this.text === "") {
+                this.error = "Musisz wypełnić pole uwagi!";
                 return;
             }
-            axios.put('/api/note/add', {content: this.text}).then(req => {
-                if(req.data.message === ""){
+
+            axios.put('/api/note/add', { content: this.text }).then(req => {
+                if(req.data.message === "") {
                     this.text = "";
                     this.error = "Dodano twoją uwagę!";
                 }
-            }).catch(e => {
-                console.log(e);
-            })
+            }).catch(e => { console.log(e); })
         }
     }
 
@@ -47,11 +46,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .add{
+    .add {
         display: flex;
         flex-direction: column;
 
-        textarea{
+        textarea {
             resize: none;
             outline: none;
             border: none;
@@ -59,14 +58,15 @@ export default {
             width: 40%;
             min-height: 200px;
             padding: 20px;
+            border-radius: 9px;
 
-            &::placeholder{
+            &::placeholder {
                 color: #ccc;
                 font-weight: bold;
             }
         }
 
-        input[type="submit"]{
+        input[type="submit"] {
             cursor: pointer;
             background: #FFD600;
             height: 50px;

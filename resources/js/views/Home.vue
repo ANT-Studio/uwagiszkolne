@@ -12,19 +12,16 @@ import Note from "../components/Note";
 import axios from "axios";
 export default {
     name: "Home",
-    components: {Note},
-    data(){
-        return{
+    components: { Note },
+    data() {
+        return {
             notes: []
         }
     },
     mounted() {
         axios.get("/api/note/index").then(request => {
-            if(request.status == 200) {
-                this.notes = request.data.data;
-                console.log(request.data.data)
-            }
-        })
+            if(request.status === 200) { this.notes = request.data.data; }
+        });
     }
 }
 </script>
@@ -34,6 +31,7 @@ export default {
         .notes {
             display: flex;
             flex-wrap: wrap;
+
             .note {
                 width: 50%;
                 margin-bottom: 20px;

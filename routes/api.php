@@ -16,7 +16,7 @@ Route::prefix("/user")->group(function() {
     Route::post('/logout', [UsersController::class, 'logout']);
 });
 
-Route::prefix('/note')->group(function (){
+Route::prefix('/note')->group(function () {
     Route::middleware('auth:sanctum')->put('/add', [NotesController::class, 'store']);
     Route::get('/index', [NotesController::class, 'index']);
 });

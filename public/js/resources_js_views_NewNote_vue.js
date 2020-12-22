@@ -64,7 +64,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this2 = this;
 
       if (this.text === "") {
-        this.error = "Musisz wypełnić pole uwagi";
+        this.error = "Musisz wypełnić pole uwagi!";
         return;
       }
 
@@ -105,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".add[data-v-776f2e3a] {\n  display: flex;\n  flex-direction: column;\n}\n.add textarea[data-v-776f2e3a] {\n  resize: none;\n  outline: none;\n  border: none;\n  background: #eee;\n  width: 40%;\n  min-height: 200px;\n  padding: 20px;\n}\n.add textarea[data-v-776f2e3a]::-moz-placeholder {\n  color: #ccc;\n  font-weight: bold;\n}\n.add textarea[data-v-776f2e3a]:-ms-input-placeholder {\n  color: #ccc;\n  font-weight: bold;\n}\n.add textarea[data-v-776f2e3a]::placeholder {\n  color: #ccc;\n  font-weight: bold;\n}\n.add input[type=submit][data-v-776f2e3a] {\n  cursor: pointer;\n  background: #FFD600;\n  height: 50px;\n  font-size: 1.2rem;\n  color: black;\n  font-weight: bold;\n  width: 170px;\n  margin: 30px 0;\n  border-radius: 9px;\n  outline: none;\n  border: none;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".add[data-v-776f2e3a] {\n  display: flex;\n  flex-direction: column;\n}\n.add textarea[data-v-776f2e3a] {\n  resize: none;\n  outline: none;\n  border: none;\n  background: #eee;\n  width: 40%;\n  min-height: 200px;\n  padding: 20px;\n  border-radius: 9px;\n}\n.add textarea[data-v-776f2e3a]::-moz-placeholder {\n  color: #ccc;\n  font-weight: bold;\n}\n.add textarea[data-v-776f2e3a]:-ms-input-placeholder {\n  color: #ccc;\n  font-weight: bold;\n}\n.add textarea[data-v-776f2e3a]::placeholder {\n  color: #ccc;\n  font-weight: bold;\n}\n.add input[type=submit][data-v-776f2e3a] {\n  cursor: pointer;\n  background: #FFD600;\n  height: 50px;\n  font-size: 1.2rem;\n  color: black;\n  font-weight: bold;\n  width: 170px;\n  margin: 30px 0;\n  border-radius: 9px;\n  outline: none;\n  border: none;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -292,7 +292,7 @@ const render = /*#__PURE__*/_withId(function render(_ctx, _cache, $props, $setup
         ], 32 /* HYDRATE_EVENTS */))
       : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_3, [
           _hoisted_4,
-          (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, { to: {name: 'Login'} }, {
+          (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, { to: { name: 'Login' } }, {
             default: _withId(() => [
               _hoisted_5
             ]),

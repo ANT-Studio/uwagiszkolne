@@ -32,6 +32,8 @@ export default {
                 this.message = "Ładowanie...";
                 this.message = await UserController.login(this.email, this.password);
             }
+
+            if(this.message === "Zalogowano") window.location.reload();
         }
     }
 }

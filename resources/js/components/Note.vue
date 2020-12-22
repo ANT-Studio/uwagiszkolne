@@ -2,7 +2,7 @@
     <div class="note">
         <div class="bar"/>
         <div class="content">
-            <div class="description">Dodany {{ writeDate(note.created_at) }} przez {{ note.name }}:</div>
+            <div class="description">Dodany {{ writeDate(note.created_at) }} przez {{ note.name }}</div>
             <div class="text">{{ note.content }}</div>
         </div>
     </div>
@@ -13,7 +13,7 @@ export default {
     name: "Note",
     props: ['note'],
     methods: {
-        writeDate(input){
+        writeDate(input) {
             let date = new Date(input);
             return date.toLocaleDateString();
         }
@@ -22,23 +22,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-    .note{
+    .note {
         display: flex;
 
-        .bar{
+        .bar {
             background: gray;
             width: 5px;
             padding: 10px 0;
             margin-right: 10px;
-
-
         }
 
-        .content{
+        .content {
             padding: 10px;
 
-            .description{
+            .description {
                 margin-bottom: 15px;
             }
         }

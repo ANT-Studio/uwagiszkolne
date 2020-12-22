@@ -15,21 +15,21 @@ export default class UserController {
     }
 
     static async register(name, email, password, password_confirmation) {
-        let response = await axios.post('/api/user/register', {name, email, password, password_confirmation});
+        let response = await axios.post('/api/user/register', { name, email, password, password_confirmation });
         let message = response.data.message;
-        if(message === ''){
-            await router.push({name: "Login"});
+        if(message === '') {
+            await router.push({ name: "Login" });
             return "Dodano Użytkownika";
         }
         return Object.entries(message)[0][1][0];
     }
 
-    static async check(){
+    static async check() {
         let response = await axios.post("/api/user/check");
         return response.data.data;
     }
 
-    static async getUser(){
+    static async getUser() {
         let response = await axios.get("/api/user");
         return response.data;
     }

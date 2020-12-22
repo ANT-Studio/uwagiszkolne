@@ -61,6 +61,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this.message = _context.sent;
 
               case 8:
+                if (_this.message === "Zalogowano") window.location.reload();
+
+              case 9:
               case "end":
                 return _context.stop();
             }
