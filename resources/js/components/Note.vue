@@ -5,8 +5,11 @@
             <div class="description">Dodany <b>{{ writeDate() }}</b> przez <b>{{ note.name }}</b></div>
             <div class="text">{{ note.content }}</div>
             <div class="actions">
-                <div class="action" @click="handleLike">
-                    Lubię to! ({{ likes }})
+                <div :class="!note.liked ? 'action' : 'action-grayed'" @click="handleLike">
+                    {{ note.liked ? 'Lubisz to!' : 'Lubię to!' }} ({{ note.likes }})
+                </div>
+                <div class="delete" v-if="admin" @click="handleDelete">
+                    Usuń to!
                 </div>
             </div>
         </div>
@@ -15,15 +18,11 @@
 
 <script>
 import NotesController from '../NotesController'
+import axios from "axios";
 
 export default {
     name: "Note",
-    props: ['note'],
-    data() {
-        return {
-            likes: 0
-        }
-    },
+    props: ['note', 'admin'],
     methods: {
         writeDate() {
             let date = new Date(this.note.created_at);
@@ -31,10 +30,21 @@ export default {
         },
         async handleLike() {
             await NotesController.addLike(this.note.id);
+            this.$emit('reloadNotes');
+        },
+
+        handleDelete: async function () {
+            await axios.delete('/api/likes/' + this.note.id).then(req => {
+                if (req.status == 200) {
+                    this.$emit('reloadNotes');
+                }
+            }).catch(e => {
+                console.log(e);
+            })
         }
     },
     async mounted () {
-        this.likes = await NotesController.getLikes(this.note.id);
+
     }
 }
 </script>
@@ -71,6 +81,21 @@ export default {
                     cursor: pointer;
                     border-radius: 6px;
                     background-color: #fdd500;
+                    padding: 7px 15px;
+                }
+
+                .action-grayed {
+                    cursor: pointer;
+                    border-radius: 6px;
+                    background-color: #cccccc;
+                    padding: 7px 15px;
+                }
+
+                .delete {
+                    cursor: pointer;
+                    border-radius: 6px;
+                    margin-left: 15px;
+                    background-color: #ff2f2f;
                     padding: 7px 15px;
                 }
             }

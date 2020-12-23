@@ -29,17 +29,24 @@ class LikesController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
+        $note_id = $request->input('note_id');
         $id = Auth::id();
-        $like = new Likes();
-        $like->user_id = $id;
-        $like->note_id = $request->input('note_id');
-        try {
-            $like->saveOrFail();
-        } catch (\Throwable $e) {
-            return response()->json(['message' => $e]);
+        if(Likes::where('user_id', '=', Auth::id())->where('note_id', '=', $note_id)->count() == 0){
+            $like = new Likes();
+            $like->user_id = $id;
+            $like->note_id = $note_id;
+            try {
+                $like->saveOrFail();
+            } catch (\Throwable $e) {
+                return response()->json(['message' => $e]);
+            }
+
+            return response()->json(['message' => 'added']);
+        }else{
+            Likes::where('user_id', '=', Auth::id())->where('note_id', '=', $note_id)->delete();
+            return response()->json(['message' => 'deleted']);
         }
 
-        return response()->json(['data' => $like, 'message' => '']);
     }
 
     /**

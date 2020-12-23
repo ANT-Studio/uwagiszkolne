@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Likes;
 use App\Models\Notes;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use phpDocumentor\Reflection\Types\Boolean;
 
 class NotesController extends Controller
 {
@@ -17,7 +19,11 @@ class NotesController extends Controller
     public function index(): JsonResponse
     {
         $notes = Notes::orderBy("created_at", "DESC")->get();
-        foreach ($notes as $note) { $note->name = $note->user->name; }
+        foreach ($notes as $note) {
+            $note->name = $note->user->name;
+            $note->likes = Likes::where('note_id', '=', $note->id)->count();
+            $note->liked = Likes::where('user_id', '=', Auth::id())->where('note_id', '=', $note->id)->count() > 0;
+        }
         return response()->json(['data' => $notes]);
     }
 
@@ -70,6 +76,10 @@ class NotesController extends Controller
      */
     public function destroy(int $id): JsonResponse
     {
-        //
+        $note_id= Notes::find($id)->id;
+        Notes::destroy($id);
+        Likes::where('note_id', '=', $note_id)->delete();
+        return response()->json('deleted');
+
     }
 }

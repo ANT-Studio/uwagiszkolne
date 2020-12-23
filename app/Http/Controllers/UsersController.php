@@ -67,6 +67,6 @@ class UsersController extends Controller
 
     public function check(): JsonResponse
     {
-        return response()->json(['data' => Auth::check()]);
+        return response()->json(['logged' => Auth::check(), 'admin' => Auth::user()->role == 1]);
     }
 }

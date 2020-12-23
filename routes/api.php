@@ -25,6 +25,6 @@ Route::prefix('/note')->group(function () {
 Route::prefix('/likes')->group(function () {
     Route::middleware('auth:sanctum')->put('/add', [LikesController::class, 'store']);
     Route::get('/index', [LikesController::class, 'index']);
-    Route::delete('/destroy', [LikesController::class, 'destroy']);
+    Route::middleware('admin')->delete('/{id}', [NotesController::class, 'destroy']);
 });
 
