@@ -2,23 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a806b55e-bab3-41cf-abef-58129d011bf6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/views/Account.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/NoteView.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/Rankings.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_12_2020,_18_41_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_12_2020__18_41__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NotesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Admin.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Notes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Notes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/NotesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/NotesController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/UserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Navbar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Note.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Note.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/Home.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +180,7 @@
       <recent name="$PROJECT_DIR$/resources/js" />
     </key>
   </component>
-  <component name="RunManager" selected="PHP Script.Backend">
+  <component name="RunManager" selected="npm.Frontend">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
@@ -224,6 +214,7 @@
       <workItem from="1608388897113" duration="673000" />
       <workItem from="1608391303163" duration="488000" />
       <workItem from="1608528215234" duration="4552000" />
+      <workItem from="1609268702368" duration="277000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1608371286726</created>
@@ -274,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609257637427</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Finished page">
+      <created>1609268572741</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1609268572741</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,6 +299,7 @@
     <MESSAGE value="Logging corrected&#10;Auth Check&#10;Adding Note" />
     <MESSAGE value="Code clean-up" />
     <MESSAGE value="Code clean-up &amp; fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code clean-up &amp; fixes" />
+    <MESSAGE value="Finished page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished page" />
   </component>
 </project>

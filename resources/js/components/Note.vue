@@ -3,7 +3,8 @@
         <div class="bar"/>
         <div class="content">
             <div class="description">Dodany <b>{{ writeDate() }}</b> przez <b>{{ note.name }}</b></div>
-            <div class="text">{{ note.content }}</div>
+            <router-link :to="'/uwaga/' + note.id" class="text">{{ note.content }}</router-link>
+            <br><br>
             <div class="actions">
                 <div :class="!note.liked ? 'action' : 'action-grayed'" @click="handleLike">
                     {{ note.liked ? 'Lubisz to!' : 'Lubię to!' }} ({{ note.likes }})
@@ -66,6 +67,8 @@ export default {
             .text {
                 font-size: 1.3rem;
                 margin-bottom: 25px;
+                color: black;
+                text-decoration: none;
             }
 
             .actions {

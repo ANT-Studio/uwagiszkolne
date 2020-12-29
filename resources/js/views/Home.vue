@@ -49,6 +49,7 @@ export default {
         .notes {
             display: flex;
             flex-wrap: wrap;
+            gap: 30px;
 
             .note {
                 margin-bottom: 20px;
