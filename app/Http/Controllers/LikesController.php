@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Likes;
+use App\Models\Notes;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Throwable;
 
 class LikesController extends Controller
 {
@@ -31,22 +33,24 @@ class LikesController extends Controller
     {
         $note_id = $request->input('note_id');
         $id = Auth::id();
-        if(Likes::where('user_id', '=', Auth::id())->where('note_id', '=', $note_id)->count() == 0){
+        $note = Notes::find($note_id);
+        if($note->creator_id == $id) return response()->json(['message' => "Nie możesz zalike'ować swojej uwagi!"]);
+        if(Likes::where('user_id', '=', Auth::id())->where('note_id', '=', $note_id)->count() == 0) {
             $like = new Likes();
             $like->user_id = $id;
             $like->note_id = $note_id;
-            try {
+            try
+            {
                 $like->saveOrFail();
-            } catch (\Throwable $e) {
+            }
+            catch (Throwable $e)
+            {
                 return response()->json(['message' => $e]);
             }
-
             return response()->json(['message' => 'added']);
-        }else{
-            Likes::where('user_id', '=', Auth::id())->where('note_id', '=', $note_id)->delete();
-            return response()->json(['message' => 'deleted']);
         }
-
+        Likes::where('user_id', '=', Auth::id())->where('note_id', '=', $note_id)->delete();
+        return response()->json(['message' => 'deleted']);
     }
 
     /**

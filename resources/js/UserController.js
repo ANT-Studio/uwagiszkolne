@@ -23,11 +23,16 @@ export default class UserController {
     }
 
     static async check() {
-        let response = await axios.post("/api/user/check");
-        return response.data.logged;
+        try {
+            let response = await axios.post("/api/user/check");
+            return response.data.logged;
+        }
+        catch {
+            return false;
+        }
     }
 
-    static async admin(){
+    static async admin() {
         let response = await axios.post("/api/user/check");
         return response.data.admin;
     }

@@ -49,16 +49,12 @@ export default {
             axios.post("/api/user/logout").then(async req => {
                 if(req.data.message === "") {
                     await this.setData();
-                    await router.push("/");
+                    window.location.reload();
                 }
             })
         },
         async setData() {
             this.logged = await UserController.check();
-        },
-        async handlePush() {
-            console.log('a');
-            await router.push('/konto');
         }
     }
 }

@@ -39,7 +39,7 @@ class UsersController extends Controller
     {
         try {
             $this->validate($request, [
-                'name' => 'required|min:3|max:20|unique',
+                'name' => 'required|min:3|max:20|unique:users',
                 'email' => 'required|email|unique:users',
                 'password' => 'required|confirmed|min:8|max:20',
             ]);
@@ -67,6 +67,7 @@ class UsersController extends Controller
 
     public function check(): JsonResponse
     {
-        return response()->json(['logged' => Auth::check(), 'admin' => Auth::user()->role == 1]);
+        if(Auth::check()) return response()->json(['logged' => Auth::check(), 'admin' => Auth::user()->role == 1]);
+        else return response()->json(['logged' => Auth::check(), 'admin' => false]);
     }
 }

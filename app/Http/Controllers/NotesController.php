@@ -7,7 +7,6 @@ use App\Models\Notes;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use phpDocumentor\Reflection\Types\Boolean;
 
 class NotesController extends Controller
 {
@@ -80,6 +79,5 @@ class NotesController extends Controller
         Notes::destroy($id);
         Likes::where('note_id', '=', $note_id)->delete();
         return response()->json('deleted');
-
     }
 }
