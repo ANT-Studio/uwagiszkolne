@@ -32,16 +32,13 @@ export default {
             await NotesController.addLike(this.note.id);
             this.$emit('reloadNotes');
         },
-        handleDelete: async function () {
+        async handleDelete() {
             await axios.delete('/api/likes/' + this.note.id).then(req => {
-                if (req.status === 200) { this.$emit('reloadNotes'); }
+                if (req.status === 200) { this.$emit('reloadNotes') }
             }).catch(e => {
-                console.log(e);
+                console.log(e)
             })
         }
-    },
-    async mounted () {
-
     }
 }
 </script>
@@ -73,6 +70,8 @@ export default {
 
             .actions {
                 display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
 
                 .action {
                     cursor: pointer;
@@ -91,7 +90,6 @@ export default {
                 .delete {
                     cursor: pointer;
                     border-radius: 6px;
-                    margin-left: 15px;
                     background-color: #ff2f2f;
                     padding: 7px 15px;
                     color: white;

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Likes;
 use App\Models\Notes;
+use DateTime;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,11 +19,45 @@ class NotesController extends Controller
     public function index(): JsonResponse
     {
         $notes = Notes::orderBy("created_at", "DESC")->get();
-        foreach ($notes as $note) {
-            $note->name = $note->user->name;
-            $note->likes = Likes::where('note_id', '=', $note->id)->count();
-            $note->liked = Likes::where('user_id', '=', Auth::id())->where('note_id', '=', $note->id)->count() > 0;
+        $notes = $this->addInfoToNotes($notes);
+        return response()->json(['data' => $notes]);
+    }
+
+    /**
+     * Display a listing of sorted notes rankings.
+     *
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function ranking(Request $request): JsonResponse
+    {
+        $type = $request->input('type');
+        $amount = $request->input('amount');
+        switch($type) {
+            default:
+            case "all":
+                $date = (new DateTime())->modify('-10 years');
+                break;
+            case "year":
+                $date = (new DateTime())->modify('-1 year');
+                break;
+            case "month":
+                $date = (new DateTime())->modify('-30 days');
+                break;
+            case "week":
+                $date = (new DateTime())->modify('-7 days');
+                break;
         }
+        $notes = Notes::whereDate('created_at', '>=', $date)->withCount('likes')->orderBy("likes_count", "DESC")->limit((int)$amount)->get();
+        $notes = $this->addInfoToNotes($notes);
+        return response()->json(['data' => $notes]);
+    }
+
+    public function own(): JsonResponse
+    {
+        $userId = Auth::id();
+        $notes = Notes::where('creator_id', '=', $userId)->get();
+        $notes = $this->addInfoToNotes($notes);
         return response()->json(['data' => $notes]);
     }
 
@@ -56,15 +91,16 @@ class NotesController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Get the specified resource in storage.
      *
-     * @param Request $request
      * @param int $id
      * @return JsonResponse
      */
-    public function update(Request $request, int $id): JsonResponse
+    public function get(int $id): JsonResponse
     {
-        //
+        $note = Notes::find($id);
+        if($note == null) return response()->json(['note' => null, 'message' => 'Nie ma takiej uwagi!']);
+        return response()->json(['note' => $this->addInfoToNotes([$note]), 'message' => '']);
     }
 
     /**
@@ -75,9 +111,20 @@ class NotesController extends Controller
      */
     public function destroy(int $id): JsonResponse
     {
+        if(!Auth::check()) return response()->json(['message' => 'You should be logged in!']);
+        if(Auth::user()->role != 1) { if(Auth::id() != Notes::find($id)->id) return response()->json(['message' => 'You should be logged in!']); }
         $note_id= Notes::find($id)->id;
         Notes::destroy($id);
         Likes::where('note_id', '=', $note_id)->delete();
-        return response()->json('deleted');
+        return response()->json(['message' => 'deleted']);
+    }
+
+    public function addInfoToNotes($notes) {
+        foreach ($notes as $note) {
+            $note->name = $note->user->name;
+            $note->likes = Likes::where('note_id', '=', $note->id)->count();
+            $note->liked = Likes::where('user_id', '=', Auth::id())->where('note_id', '=', $note->id)->count() > 0;
+        }
+        return $notes;
     }
 }

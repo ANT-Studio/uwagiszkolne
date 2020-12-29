@@ -41,4 +41,28 @@ export default class UserController {
         let response = await axios.get("/api/user");
         return response.data;
     }
+
+    static async logout() {
+        axios.post("/api/user/logout").then(async req => {
+            if(req.data.message === "") {
+                window.location.reload();
+            }
+        })
+    }
+
+    static async changePassword(passwords) {
+        let response = await axios.post('/api/user/change-password', { password: passwords.newPassword, password_confirmation: passwords.passwordConfirmation, old_password: passwords.oldPassword });
+        let message = response.data.message;
+        if(message === '') return "Zmieniono hasło!";
+        console.log(Object.entries(message)[0]);
+        return Object.entries(message)[0][1][0];
+    }
+
+    static async changeNick(name) {
+        let response = await axios.post('/api/user/change-nick', { name });
+        let message = response.data.message;
+        if(message === '') window.location.reload();
+        console.log(Object.entries(message)[0]);
+        return Object.entries(message)[0][1][0];
+    }
 }

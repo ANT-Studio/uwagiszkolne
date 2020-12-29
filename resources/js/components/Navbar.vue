@@ -16,7 +16,7 @@
             <div class="navbar-link">
                 <router-link :to="{ name: 'Account' }" v-if="logged">
                     <font-awesome-icon icon="user" />
-                    <span @click="logout">Wyloguj się</span>
+                    <span>{{ user.name }}</span>
                 </router-link>
                 <router-link v-else :to="{ name: 'Login' }" active-class="navbar-link-active">
                     <font-awesome-icon icon="user" />
@@ -38,23 +38,17 @@ export default {
     data() {
         return {
             links: main,
-            logged: ""
+            logged: "",
+            user: { name: "" }
         }
     },
     async mounted() {
         await this.setData()
     },
     methods: {
-        logout() {
-            axios.post("/api/user/logout").then(async req => {
-                if(req.data.message === "") {
-                    await this.setData();
-                    window.location.reload();
-                }
-            })
-        },
         async setData() {
             this.logged = await UserController.check();
+            this.user = await UserController.getUser();
         }
     }
 }

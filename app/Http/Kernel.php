@@ -44,10 +44,9 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             SubstituteBindings::class,
         ],
-
         'api' => [
             EnsureFrontendRequestsAreStateful::class,
-            'throttle:api',
+            /*'throttle:api',*/
             SubstituteBindings::class,
         ],
     ];

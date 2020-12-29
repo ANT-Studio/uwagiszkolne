@@ -70,4 +70,40 @@ class UsersController extends Controller
         if(Auth::check()) return response()->json(['logged' => Auth::check(), 'admin' => Auth::user()->role == 1]);
         else return response()->json(['logged' => Auth::check(), 'admin' => false]);
     }
+
+    public function changePassword(Request $request): JsonResponse
+    {
+        try {
+            $this->validate($request, [
+                'password' => 'required|confirmed|min:8|max:20',
+            ]);
+        }
+        catch (ValidationException $e) {
+            return response()->json(['user' => null, 'message' => $e->errors()]);
+        }
+
+        if(!Hash::check($request->input('old_password'), Auth::user()->getAuthPassword())) return response()->json(['message' => [ [ 'Hasło jest niepoprawne!' ] ]]);
+        $password = Hash::make($request->input('password'));
+        $user = User::find(Auth::id());
+        $user->password = $password;
+        $user->save();
+        return response()->json(['user' => $user, 'message' => '']);
+    }
+
+    public function changeNick(Request $request): JsonResponse
+    {
+        try {
+            $this->validate($request, [
+                'name' => 'required|min:2|max:20|unique:users',
+            ]);
+        }
+        catch (ValidationException $e) {
+            return response()->json(['message' => $e->errors()]);
+        }
+
+        $user = User::find(Auth::id());
+        $user->name = $request->input('name');
+        $user->save();
+        return response()->json(['message' => '']);
+    }
 }
