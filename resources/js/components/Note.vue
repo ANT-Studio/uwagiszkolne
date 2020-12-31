@@ -3,7 +3,7 @@
         <div class="bar"/>
         <div class="content">
             <div class="description">Dodany <b>{{ writeDate() }}</b> przez <b>{{ note.name }}</b></div>
-            <router-link :to="'/uwaga/' + note.id" class="text">{{ note.content }}</router-link>
+            <router-link :to="'/uwaga/' + note.id" class="text" v-html="note.content"></router-link>
             <br><br>
             <div class="actions">
                 <div :class="!note.liked ? 'action' : 'action-grayed'" @click="handleLike">

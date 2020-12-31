@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export default class UserController {
     static async login(email, password) {
+        await axios.get('/sanctum/csrf-cookie');
         let response = await axios.post('/api/user/login', { email, password });
         let message = response.data.message;
         if(message === '') {
@@ -13,6 +14,7 @@ export default class UserController {
     }
 
     static async register(name, email, password, password_confirmation) {
+        await axios.get('/sanctum/csrf-cookie');
         let response = await axios.post('/api/user/register', { name, email, password, password_confirmation });
         let message = response.data.message;
         if(message === '') {
@@ -43,6 +45,7 @@ export default class UserController {
     }
 
     static async logout() {
+        await axios.get('/sanctum/csrf-cookie');
         axios.post("/api/user/logout").then(async req => {
             if(req.data.message === "") {
                 window.location.reload();

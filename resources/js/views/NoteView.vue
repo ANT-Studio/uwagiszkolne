@@ -1,7 +1,7 @@
 <template>
     <div class="note-view">
         <h1>Uwaga #{{ $route.params.id }}</h1>
-        <span class="content">{{ note.content }}</span>
+        <span class="content" v-html="note.content"></span>
         <br><br><br><br>
         <div class="actions">
             <div :class="!note.liked ? 'action' : 'action-grayed'" @click="handleLike">
